@@ -1,0 +1,425 @@
+<template>
+    <!-- Sticky Navigation -->
+    <header class="navbar">
+        <div class="navbar__inner">
+            <div class="navbar__brand">
+                <img src={logoUrl} alt="Altimetrik" class="navbar__logo">
+                <img src={altimetrikTextLogoUrl} alt="Altimetrik" class="navbar__logo">
+                <span class="navbar__name">Bhavesh Jindal</span>
+            </div>
+            <nav class="navbar__links">
+                <a href="#home" data-target="home" class={navClasses.home} onclick={handleNavClick}>Home</a>
+                <a href="#summary" data-target="summary" class={navClasses.summary} onclick={handleNavClick}>Summary</a>
+                <a href="#expertise" data-target="expertise" class={navClasses.expertise} onclick={handleNavClick}>Expertise</a>
+                <a href="#experience" data-target="experience" class={navClasses.experience} onclick={handleNavClick}>Experience</a>
+                <a href="#recognition" data-target="recognition" class={navClasses.recognition} onclick={handleNavClick}>Recognition</a>
+                <a href="#skills" data-target="skills" class={navClasses.skills} onclick={handleNavClick}>Skills</a>
+                <a href="#contact" data-target="contact" class={navClasses.contact} onclick={handleNavClick}>Contact</a>
+            </nav>
+            <button class="navbar__hamburger" onclick={toggleMobileMenu} aria-label="Toggle menu">
+                <span class="hamburger__bar"></span>
+                <span class="hamburger__bar"></span>
+                <span class="hamburger__bar"></span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <nav class={mobileMenuClass}>
+            <a href="#home" data-target="home" onclick={handleNavClick}>Home</a>
+            <a href="#summary" data-target="summary" onclick={handleNavClick}>Summary</a>
+            <a href="#expertise" data-target="expertise" onclick={handleNavClick}>Expertise</a>
+            <a href="#experience" data-target="experience" onclick={handleNavClick}>Experience</a>
+            <a href="#recognition" data-target="recognition" onclick={handleNavClick}>Recognition</a>
+            <a href="#skills" data-target="skills" onclick={handleNavClick}>Skills</a>
+            <a href="#contact" data-target="contact" onclick={handleNavClick}>Contact</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" data-section="home">
+            <div class="hero__inner">
+                <div class="hero__content">
+                    <p class="hero__eyebrow">Portfolio</p>
+                    <h1 class="hero__name">Bhavesh Jindal</h1>
+                    <h2 class="hero__headline">PD1 Certified Salesforce Developer</h2>
+                    <hr class="hero__divider">
+                    <div class="hero__tags">
+                        <p>Solution Design | Apex | LWC | Integration</p>
+                        <p>Sales / Service / Experience Cloud | AI-Assisted Development</p>
+                    </div>
+                    <p class="hero__summary">
+                        Salesforce Developer with around 7 years of experience in designing, developing,
+                        and delivering scalable Salesforce solutions across Sales Cloud, Service Cloud, and
+                        Experience Cloud. Strong expertise in Apex, Lightning Web Components, integrations,
+                        automation, validation logic, and end-to-end solution delivery.
+                    </p>
+                </div>
+                <div class="hero__photo-wrapper">
+                    <div class="hero__photo-frame">
+                        <div class="hero__photo-accent"></div>
+                        <img src={photoUrl} alt="Bhavesh Jindal" class="hero__photo">
+                    </div>
+                </div>
+            </div>
+            <!-- Recognition Card (near hero, as specified) -->
+            <div class="recognition-hero" data-section="recognition">
+                <div class="recognition-hero__card">
+                    <div class="recognition-hero__icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M12 12l-4 4h8l-4-4z"/>
+                            <path d="M8 16v2a2 2 0 002 2h4a2 2 0 002-2v-2"/>
+                        </svg>
+                    </div>
+                    <div class="recognition-hero__text">
+                        <h3 class="recognition-hero__label">Recognition Highlight</h3>
+                        <p class="recognition-hero__desc">
+                            <strong>Standing Ovation</strong> — Nominated by Manivannan Perialwar.
+                            Awarded for outstanding contribution, ownership, and delivery excellence
+                            in the Insightec Project.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Summary Section -->
+        <section class="summary" data-section="summary">
+            <div class="summary__inner">
+                <div class="summary__grid">
+                    <div class="summary__heading-col">
+                        <h2 class="section-heading">
+                            Professional Summary
+                            <span class="section-heading__underline"></span>
+                        </h2>
+                    </div>
+                    <div class="summary__content-col">
+                        <p class="summary__text">
+                            Salesforce Developer with around 7 years of experience in designing, developing,
+                            and delivering scalable Salesforce solutions across Sales Cloud, Service Cloud,
+                            and Experience Cloud. Strong expertise in Apex, Lightning Web Components,
+                            integrations, automation, validation logic, and end-to-end solution delivery.
+                        </p>
+                        <p class="summary__text">
+                            Experienced in translating business requirements into robust technical designs,
+                            building reusable components, optimizing existing implementations, and supporting
+                            complex enterprise processes. Skilled in using AI-assisted coding tools such as
+                            Claude Code, Codex, and Agentforce Vibe to improve development speed, code
+                            quality, debugging, and solution design support.
+                        </p>
+                        <p class="summary__text">
+                            Recognized for ownership, collaboration, and delivering high-quality solutions
+                            in fast-paced project environments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Areas Section -->
+        <section class="expertise" data-section="expertise">
+            <div class="expertise__inner">
+                <p class="section-eyebrow">Core Domains</p>
+                <h2 class="section-heading section-heading--no-underline">Expertise Areas</h2>
+                <div class="expertise__grid">
+                    <!-- Card 1: Salesforce Engineering -->
+                    <div class="expertise-card">
+                        <div class="expertise-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M8 3H5a2 2 0 00-2 2v3m6-5h3m3 0h3a2 2 0 012 2v3M8 21H5a2 2 0 01-2-2v-3m12 5h3a2 2 0 002-2v-3"/>
+                                <path d="M12 8v2m0 4v2m-4-4h2m4 0h2"/>
+                            </svg>
+                        </div>
+                        <h3 class="expertise-card__title">Salesforce Engineering</h3>
+                        <ul class="expertise-card__list">
+                            <li>Apex</li>
+                            <li>LWC (Lightning Web Components)</li>
+                            <li>Aura Components</li>
+                            <li>SOQL &amp; SOSL</li>
+                            <li>Flows</li>
+                        </ul>
+                    </div>
+                    <!-- Card 2: Platform & Cloud -->
+                    <div class="expertise-card">
+                        <div class="expertise-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 15c2.5 3 5.5 4 9 4s6.5-1 9-4"/>
+                                <path d="M3 11c2.5 3 5.5 4 9 4s6.5-1 9-4"/>
+                                <path d="M3 7c2.5 3 5.5 4 9 4s6.5-1 9-4"/>
+                            </svg>
+                        </div>
+                        <h3 class="expertise-card__title">Platform &amp; Cloud</h3>
+                        <ul class="expertise-card__list">
+                            <li>Sales Cloud</li>
+                            <li>Service Cloud</li>
+                            <li>Experience Cloud</li>
+                        </ul>
+                    </div>
+                    <!-- Card 3: Enterprise Delivery -->
+                    <div class="expertise-card">
+                        <div class="expertise-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="7" height="7" rx="1"/>
+                                <rect x="14" y="3" width="7" height="7" rx="1"/>
+                                <rect x="3" y="14" width="7" height="7" rx="1"/>
+                                <rect x="14" y="14" width="7" height="7" rx="1"/>
+                            </svg>
+                        </div>
+                        <h3 class="expertise-card__title">Enterprise Delivery</h3>
+                        <ul class="expertise-card__list">
+                            <li>Conga CPQ</li>
+                            <li>Copado Deployments</li>
+                            <li>Systems Integration</li>
+                            <li>Release Support</li>
+                        </ul>
+                    </div>
+                    <!-- Card 4: AI-Assisted Dev -->
+                    <div class="expertise-card expertise-card--dark">
+                        <div class="expertise-card__icon expertise-card__icon--accent">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                                <path d="M8 8h8M8 12h8M8 16h5"/>
+                            </svg>
+                        </div>
+                        <h3 class="expertise-card__title expertise-card__title--light">AI-Assisted Dev</h3>
+                        <ul class="expertise-card__list expertise-card__list--light">
+                            <li>Claude Code</li>
+                            <li>Codex</li>
+                            <li>Agentforce Vibe</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section class="experience" data-section="experience">
+            <div class="experience__inner">
+                <div class="experience__grid">
+                    <div class="experience__heading-col">
+                        <h2 class="section-heading">
+                            Professional Experience
+                            <span class="section-heading__underline"></span>
+                        </h2>
+                    </div>
+                    <div class="experience__content-col">
+                        <!-- Timeline Item -->
+                        <div class="timeline-item">
+                            <div class="timeline-item__node"></div>
+                            <div class="timeline-item__header">
+                                <h3 class="timeline-item__title">Salesforce Developer</h3>
+                                <span class="timeline-item__badge">7+ Years Experience</span>
+                            </div>
+                            <p class="timeline-item__lead">Focus Areas &amp; Responsibilities</p>
+                            <ul class="timeline-item__list">
+                                <li>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 12l2 2 4-4"/>
+                                        <circle cx="12" cy="12" r="10"/>
+                                    </svg>
+                                    <span>Designed and developed custom Salesforce solutions using Apex, LWC, Aura, and declarative automation.</span>
+                                </li>
+                                <li>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 12l2 2 4-4"/>
+                                        <circle cx="12" cy="12" r="10"/>
+                                    </svg>
+                                    <span>Built and enhanced Experience Cloud functionality to support customer-facing and partner-facing business processes.</span>
+                                </li>
+                                <li>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 12l2 2 4-4"/>
+                                        <circle cx="12" cy="12" r="10"/>
+                                    </svg>
+                                    <span>Contributed to solution design discussions by analyzing business needs, identifying technical approaches, and proposing scalable implementations.</span>
+                                </li>
+                                <li>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 12l2 2 4-4"/>
+                                        <circle cx="12" cy="12" r="10"/>
+                                    </svg>
+                                    <span>Supported Conga CPQ-related enhancements, validations, proposal/order processes, and configuration-driven business workflows.</span>
+                                </li>
+                                <li>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 12l2 2 4-4"/>
+                                        <circle cx="12" cy="12" r="10"/>
+                                    </svg>
+                                    <span>Used Copado for deployment support, release management, and Salesforce delivery lifecycle activities.</span>
+                                </li>
+                                <li>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 12l2 2 4-4"/>
+                                        <circle cx="12" cy="12" r="10"/>
+                                    </svg>
+                                    <span>Used AI-assisted coding tools such as Claude Code, Codex, and Agentforce Vibe to support code generation, debugging, refactoring, documentation, and technical analysis.</span>
+                                </li>
+                                <li class="timeline-item__highlight">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M13 2L3 14h8l-2 8 10-12h-8l2-8z"/>
+                                    </svg>
+                                    <span>Developed complex validations, triggers, asynchronous processes, and integrations to support business-critical workflows.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Skills Section -->
+        <section class="skills" data-section="skills">
+            <div class="skills__inner">
+                <p class="section-eyebrow">Technical Depth</p>
+                <h2 class="section-heading">Core Skills</h2>
+                <div class="skills__grid">
+                    <div class="skills__group">
+                        <h3 class="skills__group-title">Salesforce Platform Development</h3>
+                        <ul class="skills__list">
+                            <li>Apex Classes, Triggers, Batch Apex, Queueable Apex</li>
+                            <li>Lightning Web Components</li>
+                            <li>Conga CPQ</li>
+                            <li>Copado</li>
+                            <li>Experience Cloud</li>
+                            <li>Salesforce Flows and Automation</li>
+                            <li>SOQL / SOSL</li>
+                            <li>REST API Integrations</li>
+                        </ul>
+                    </div>
+                    <div class="skills__group">
+                        <h3 class="skills__group-title">Solution Design &amp; Delivery</h3>
+                        <ul class="skills__list">
+                            <li>Solution Design</li>
+                            <li>Data Model Design</li>
+                            <li>Validation Rules and Approval Processes</li>
+                            <li>Debugging and Performance Optimization</li>
+                            <li>Salesforce Security Model</li>
+                            <li>Deployment and Release Support</li>
+                            <li>Agile Delivery and Requirement Analysis</li>
+                        </ul>
+                    </div>
+                    <div class="skills__group">
+                        <h3 class="skills__group-title">AI-Assisted Development</h3>
+                        <ul class="skills__list">
+                            <li>Claude Code</li>
+                            <li>Codex</li>
+                            <li>Agentforce Vibe</li>
+                            <li>Prompting for Code Generation, Debugging, and Refactoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Strengths Section -->
+        <section class="strengths">
+            <div class="strengths__inner">
+                <p class="section-eyebrow">Professional Profile</p>
+                <h2 class="section-heading">Key Strengths</h2>
+                <div class="strengths__grid">
+                    <div class="strength-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span>Strong hands-on Salesforce development experience</span>
+                    </div>
+                    <div class="strength-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span>Ability to understand business problems and convert them into technical solutions</span>
+                    </div>
+                    <div class="strength-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span>Conga CPQ enhancement and support experience</span>
+                    </div>
+                    <div class="strength-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span>Copado-based deployment and release support</span>
+                    </div>
+                    <div class="strength-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span>Experience with both declarative and programmatic Salesforce development</span>
+                    </div>
+                    <div class="strength-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span>Practical use of AI-assisted development tools for faster delivery and better code quality</span>
+                    </div>
+                    <div class="strength-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span>Good debugging, troubleshooting, and root-cause analysis skills</span>
+                    </div>
+                    <div class="strength-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span>Collaborative team player with ownership-driven delivery approach</span>
+                    </div>
+                    <div class="strength-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span>Focus on clean, scalable, and maintainable solution design</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Stack Section -->
+        <section class="tech-stack">
+            <div class="tech-stack__inner">
+                <p class="section-eyebrow">Platform &amp; Tools</p>
+                <h2 class="section-heading">Technology Stack</h2>
+                <p class="tech-stack__text">
+                    Salesforce · Apex · Lightning Web Components · Aura · Sales Cloud ·
+                    Service Cloud · Experience Cloud · Conga CPQ · Copado · SOQL ·
+                    SOSL · Flows · REST APIs · JavaScript · HTML · CSS ·
+                    Git · VS Code · Salesforce CLI · Claude Code · Codex · Agentforce Vibe
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer / Contact -->
+    <footer class="footer" data-section="contact">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="footer__name">Bhavesh Jindal</span>
+                <span class="footer__copy">PD1 Certified Salesforce Developer</span>
+            </div>
+            <div class="footer__links">
+                <a href="#" class="footer__link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    Email
+                </a>
+                <a href="#" class="footer__link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+                        <rect x="2" y="9" width="4" height="12"/>
+                        <circle cx="4" cy="4" r="2"/>
+                    </svg>
+                    LinkedIn
+                </a>
+                <a href="#" class="footer__link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </footer>
+</template>
