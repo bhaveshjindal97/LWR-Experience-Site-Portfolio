@@ -2,6 +2,7 @@ import { LightningElement } from 'lwc';
 import PROFILE_PHOTO from '@salesforce/resourceUrl/Bhavesh_Profile_Picture';
 import ALTIMETRIK_LOGO from '@salesforce/resourceUrl/altimetrikLogo';
 import ALTIMETRIK_TEXT_LOGO from '@salesforce/resourceUrl/Altimetrik_Logo';
+import ALTIMETRIK_TEXT_LOGO_MOBILE from '@salesforce/resourceUrl/Altimetrik_Logo_Mobile';
 
 const SECTIONS = [
     'home',
@@ -17,6 +18,7 @@ export default class BhaveshPortfolio extends LightningElement {
     photoUrl = PROFILE_PHOTO;
     logoUrl = ALTIMETRIK_LOGO;
     altimetrikTextLogoUrl = ALTIMETRIK_TEXT_LOGO;
+    altimetrikTextLogoMobileUrl = ALTIMETRIK_TEXT_LOGO_MOBILE;
     activeSection = 'home';
     mobileMenuOpen = false;
     _scrollHandler = null;

@@ -97,17 +97,37 @@ main {
 .navbar__brand {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 10px;
 }
 
 .navbar__logo {
-    height: 32px;
+    height: 28px;
     width: auto;
+    display: block;
+}
+
+.navbar__logo--mobile {
+    display: block;
+}
+
+.navbar__logo--desktop {
     display: none;
 }
 
 @media (min-width: 768px) {
+    .navbar__brand {
+        gap: 16px;
+    }
+
     .navbar__logo {
+        height: 32px;
+    }
+
+    .navbar__logo--mobile {
+        display: none;
+    }
+
+    .navbar__logo--desktop {
         display: block;
     }
 }
@@ -118,6 +138,7 @@ main {
     font-weight: 700;
     color: var(--color-navy);
     letter-spacing: -0.01em;
+    white-space: nowrap;
 }
 
 .navbar__links {
